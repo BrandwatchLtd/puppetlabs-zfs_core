@@ -94,7 +94,7 @@ describe Puppet::Type.type(:zfs).provider(:zfs) do
      :mountpoint, :nbmand,  :primarycache, :quota, :readonly,
      :recordsize, :refquota, :refreservation, :reservation,
      :secondarycache, :setuid, :shareiscsi, :sharenfs, :sharesmb,
-     :snapdir, :version, :volsize, :vscan, :xattr].each do |prop|
+     :snapdir, :version, :volsize, :vscan, :xattr, :overlay].each do |prop|
       it "should get #{prop}" do
         expect(provider).to receive(:zfs).with(:get, '-H', '-o', 'value', prop, name).and_return("value\n")
 
